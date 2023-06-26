@@ -1,0 +1,51 @@
+/**/BMapGL._rd._cbk29414 && BMapGL._rd._cbk29414({
+	 "bound_rank_params": {
+        "nc": 1
+    },
+    "content": {
+        "business": "\u5929\u661f\u6865,\u65b0\u6865,\u8983\u5bb6\u5c97",
+        "district": "\u5a0c\u6b0f\u6f7d\u9367\u6fc6\u5c2f",
+        "name": "\u4e2d\u56fd",
+        "sup_bus": 0,
+        "sup_lukuang": 0,
+        "sup_subway": 0,
+        "type": 1,
+        "uid": 1
+    },
+    "current_city": {
+        "code": 1,
+        "geo": ".=kZQFFBbkuwaA;",
+        "level": 0,
+        "name": "\u4e2d\u56fd",
+        "sup": 0,
+        "sup_bus": 0,
+        "sup_business_area": 0,
+        "sup_lukuang": 0,
+        "sup_subway": 0,
+        "type": 0,
+        "up_province_name": "\u4e2d\u56fd"
+    },
+    "err_msg": "",
+    "hot_city": ["\u5317\u4eac\u5e02|131", "\u4e0a\u6d77\u5e02|289", "\u5e7f\u5dde\u5e02|257", "\u6df1\u5733\u5e02|340", "\u6210\u90fd\u5e02|75", "\u5929\u6d25\u5e02|332", "\u5357\u4eac\u5e02|315", "\u676d\u5dde\u5e02|179", "\u6b66\u6c49\u5e02|218"],
+    "result": {
+        "data_security_filt_res": 0,
+        "error": 0,
+        "illegal": 0,
+        "qid": "",
+        "time": 0,
+        "type": 4,
+        "qt": "cen",
+        "b": "11115051.581016274,3330592.995614085;12584491.581016274,3517984.995614085",
+        "l": "8",
+        "ie": "utf-8",
+        "oue": "1",
+        "fromproduct": "jsapi",
+        "callback": "BMapGL._rd._cbk29414",
+        "ak": "R4pWCxXH9qm9ZpbnppGyxUGKydAd6esD",
+        "v": "gl",
+        "timeStamp": "1680633416683",
+        "sign": "3a41dc9718e4"
+    },
+    "uii_err": 0,
+    "anti_auth": "f7YADe6x9A5GGV7G6UgBwS1J9ROyAgUxuxLRVLBBExVtGZSE5S5MGGADzwyS8v7uvkGcuVtvvhguVtvyheuVtvCMGuVtvCQMuVtvIPcuVtvYvjuVtvZgMuVtv@vcuVtvc3CuVtvcPPuVtveGvuxtwfiKv7uvh3CuVtcvY1SGpuxNt3yw8JL00IvrMhuVtGccZcuVtegvcguxLRVLBBExV"
+})

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <title>Symbol加载图标</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <style>
+    body,
+    html,
+    #container {
+      overflow: hidden;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      font-family: "微软雅黑";
+    }
+  </style>
+  <script src="/mapcat/api.js"></script>
+</head>
+
+<body>
+  <div id="container"></div>
+</body>
+
+</html>
+<script>
+  var map = new BMapGL.Map('container');
+  var point = new BMapGL.Point(106.457279,29.583634);
+  map.centerAndZoom(point, 13);
+  map.enableScrollWheelZoom(true);
+
+   //设置maker机型为飞机形
+   var marker1;
+  marker1 = new BMapGL.Marker(new BMapGL.Point(106.457279,29.583634), 
+  { icon: new BMapGL.SVGSymbol("m0,-10c-0.20885,0 -0.39491,0.08583 -0.55177,0.24149c-0.15674,0.15536 -0.28646,0.37838 -0.39429,0.65665c-0.21586,0.55655 -0.34853,1.33844 -0.42114,2.27477c-0.07231,0.93446 -0.08474,2.02273 -0.05447,3.18765c-2.58175,1.05925 -7.81787,3.24648 -8.23854,3.73474c-0.56001,0.65029 -0.37908,1.3954 -0.15331,1.89002l8.608,-1.75235c0.18202,2.28374 0.4407,4.5455 0.66615,6.31771c-0.8418,0.24646 -2.41323,0.73303 -2.73754,1.03474c-0.4469,0.41562 -0.4469,1.75793 -0.4469,1.75793l3.52318,-0.28665c0.08286,0.57874 0.13486,0.9163 0.13486,0.9163l0.00511,0.03042l0.02778,0l0.06486,0l0.02778,0l0.00511,-0.03042c0,0 0.05185,-0.33756 0.13486,-0.9163l3.52424,0.28665c0,0 0,-1.34231 -0.44688,-1.75793c-0.32446,-0.30172 -1.89697,-0.7895 -2.73847,-1.0358c0.22484,-1.76681 0.4832,-4.02001 0.66507,-6.29634l8.50712,1.73203c0.22561,-0.49462 0.40765,-1.23973 -0.15237,-1.89002c-0.41538,-0.48221 -5.52504,-2.62071 -8.1386,-3.69423c0.03119,-1.17999 0.01971,-2.28285 -0.05353,-3.22816l0,-0.00233c-0.07263,-0.93523 -0.20545,-1.71635 -0.42114,-2.27244c-0.10784,-0.27827 -0.23634,-0.50114 -0.3932,-0.65665c-0.15689,-0.15567 -0.34293,-0.24149 -0.55195,-0.24149l0,0l0,0l0,0l0.00001,0l0,0l-0.00003,0.00001z", 
+  { fillColor: '#E4F4F4', fillOpacity: 0.8, scale: 3, rotation: 0, strokeOpacity: 1 
+     }) 
+  });
+  //  箭头方向向下的闭合箭头
+  var marker2 = new BMapGL.Marker(new BMapGL.Point(106.404386,29.61127), { 
+    icon: new BMapGL.SVGSymbol(BMapGL.SymbolShapeType.BMap_Symbol_SHAPE_BACKWARD_CLOSED_ARROW, 
+    { fillColor: 'green', fillOpacity: 0.8, scale: 5, rotation: 0, strokeOpacity: 0 
+     })
+  });
+  // 预设的笑脸形状
+  var marker3 = new BMapGL.Marker(new BMapGL.Point(106.404386,29.61127), { 
+    icon: new BMapGL.SVGSymbol(BMapGL.SymbolShapeType.BMap_Symbol_SHAPE_SMILE, 
+    { fillColor: 'red', fillOpacity: 0.6, scale: 4, anchor: new BMapGL.Size(0, 5) 
+      }) 
+  });
+  // 五角星
+  var marker4 = new BMapGL.Marker(new BMapGL.Point(106.44463,29.635383), 
+  { icon: new BMapGL.SVGSymbol(BMapGL.SymbolShapeType.BMap_Symbol_SHAPE_STAR, 
+    { fillColor: 'pink', fillOpacity: 0.6, scale: 4, anchor: new BMapGL.Size(0, 5) 
+      }) 
+  });
+  // 菱形
+  var marker5 = new BMapGL.Marker(new BMapGL.Point(106.427383,29.629857), 
+  { icon: new BMapGL.SVGSymbol(BMapGL.SymbolShapeType.BMap_Symbol_SHAPE_RHOMBUS, {
+     fillColor: '#0AC8C5', fillOpacity: 0.6, scale: 4,strokeOpacity: 0.5, anchor: new BMapGL.Size(0, 5) 
+    }) 
+   });
+   // 照相机形状
+   var marker6 = new BMapGL.Marker(new BMapGL.Point(106.37794,29.583634), 
+  { icon: new BMapGL.SVGSymbol(BMapGL.SymbolShapeType.BMap_Symbol_SHAPE_CAMERA, {
+     fillColor: 'pink', fillOpacity: 0.6, scale: 3,strokeOpacity: .6, anchor: new BMapGL.Size(0, 5) 
+    }) 
+   });
+   // 钟表形状
+   var marker7 = new BMapGL.Marker(new BMapGL.Point(106.495798,29.536384), 
+  { icon: new BMapGL.SVGSymbol(BMapGL.SymbolShapeType.BMap_Symbol_SHAPE_CLOCK, {
+     fillColor: 'blue', fillOpacity: 0.6, scale: 2, anchor: new BMapGL.Size(0, 5) 
+    }) 
+   });
+  // 箭头方向向上的非闭合箭头
+  var marker8 = new BMapGL.Marker(new BMapGL.Point(106.486599,29.532864), 
+  { icon: new BMapGL.SVGSymbol(BMapGL.SymbolShapeType.BMap_Symbol_SHAPE_FORWARD_OPEN_ARROW, {
+     fillColor: 'blue', fillOpacity: 0.6, scale: 6,strokeOpacity: 1, anchor: new BMapGL.Size(0, 5) 
+    }) 
+   });
+  
+  map.addOverlay(marker1);
+  map.addOverlay(marker2);
+  map.addOverlay(marker3);
+  map.addOverlay(marker4);
+  map.addOverlay(marker5);
+  map.addOverlay(marker6);
+  map.addOverlay(marker7);
+  map.addOverlay(marker8);
+
+  function show(){
+    marker1.show();
+    marker2.show();
+    marker3.show();
+    marker4.show();
+    marker5.show();
+    marker6.show();
+    marker7.show();
+    marker8.show();
+  }
+  function hide(){
+    marker1.hide();
+    marker2.hide();
+    marker3.hide();
+    marker4.hide();
+    marker5.hide();
+    marker6.hide();
+    marker7.hide();
+    marker8.hide();
+  
+}
+</script>

@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <title>添加点标记</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <style>
+    body,
+    html,
+    #container {
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        font-family: "微软雅黑";
+    }
+
+    ul li {
+        list-style: none;
+    }
+
+    .drawing-panel {
+        z-index: 999;
+        position: fixed;
+        bottom: 3.5rem;
+        margin-left: 3rem;
+        padding: 1rem 1rem;
+        border-radius: .25rem;
+        background-color: #fff;
+        box-shadow: 0 2px 6px 0 rgba(27, 142, 236, 0.5);
+    }
+
+    .btn {
+        width: 150px;
+        height: 30px;
+        float: left;
+        background-color: #fff;
+        color: rgba(27, 142, 236, 1);
+        font-size: 14px;
+        border: 1px solid rgba(27, 142, 236, 1);
+        border-radius: 5px;
+        margin: 0 5px;
+        text-align: center;
+        line-height: 30px;
+    }
+
+    .btn:hover {
+        background-color: rgba(27, 142, 236, 0.8);
+        color: #fff;
+    }
+  </style>
+  <script src="/mapcat/api.js"></script>
+</head>
+
+<body>
+<div id="container"></div>
+<ul class="drawing-panel" style="z-index: 99;">
+    <li class="btn" onclick="stop()">动画停止</li>
+    <li class="btn" onclick="start()">动画开始</li>
+</ul>
+</body>
+</html>
+<script>
+   var opo = 1;
+    function animation() {
+        opo++
+        console.log(opo % 10000);
+        window.requestAnimationFrame(animation);
+  }
+
+  function startAnimation() {
+        window.requestAnimationFrame(animation);
+  }
+  const size = 200;
+  function CustomSymbol(_size, _anchor) {
+        BMapGL.Symbol.call(this, _size, _anchor);
+        this.width = _size.width;
+        this.height = _size.height;
+        // 需要再addOverlay之前设置true，需要保证纹理大小不变化
+        this.isReDraw = true;
+    }
+    CustomSymbol.prototype = new BMapGL.Symbol();
+    CustomSymbol.prototype.constructor = CustomSymbol;
+    CustomSymbol.prototype.add = function () {
+        const canvas = document.createElement('canvas');
+        canvas.width = this.width * 2;
+        canvas.height = this.height * 2;
+        this.context = canvas.getContext('2d');
+        this.isReDraw = false;
+
+    }
+    CustomSymbol.prototype.render = function (map) {
+        const duration = 1500;
+        const t = (performance.now() % duration) / duration;
+
+        // 可以通过修改 0.3 0.7
+        const radius = (this.width / 2) * 0.1;
+        const outerRadius = (this.width / 2) * 0.5 * t + radius;
+        const context = this.context;
+        context.save();
+        // 2倍图
+        context.scale(2, 2);
+        context.clearRect(0, 0, this.width, this.height);
+
+        // 扩散圆
+        context.beginPath();
+        context.arc(
+            this.width / 2,
+            this.height / 2,
+            outerRadius,
+            0,
+            Math.PI * 2
+        );
+        context.fillStyle = 'rgba(38,1,252,'+(1 - t)+')' 
+        context.fill();
+
+        // 中间圆
+        context.beginPath();
+        context.arc(
+            this.width / 2,
+            this.height / 2,
+            radius,
+            0,
+            Math.PI * 2
+        );
+        context.fillStyle = 'rgba(38,1,252, 1)';
+        context.strokeStyle = 'rgba(38,1,252, .1)';
+        // 圆描边宽度动态展示
+        context.lineWidth = 2 + 4 * (1 - t);
+        context.fill();
+        context.stroke();
+
+        context.restore();
+
+        // 更新图像的像素数据
+        this.data = context.getImageData(
+            0,
+            0,
+            this.context.canvas.width,
+            this.context.canvas.height
+        );
+        return true;
+    }
+    var custom = new CustomSymbol(new BMapGL.Size(size, size), new BMapGL.Size(size / 2, size / 2));
+    var map = new BMapGL.Map('container');
+    var point = new BMapGL.Point(106.457279,29.583634);
+    map.centerAndZoom(point, 13);
+    map.enableScrollWheelZoom(true);
+    // var marker = new BMapGL.Marker(new BMapGL.Point(116.404, 39.925));
+    // map.addOverlay(marker);
+    
+
+    var marker1 = new BMapGL.Marker(new BMapGL.Point(106.457279,29.583634), { icon: custom, enableDragging: false });
+    map.addOverlay(marker1);
+    function start() {
+        custom.isReDraw = true;
+        canvasOverlay.isReDraw = true;
+
+    }
+    //停止动画
+    function stop() {
+        custom.isReDraw = false;
+        canvasOverlay.isReDraw = false;
+    }
+   
+    // 自定义canvas
+    const canvas = document.createElement('canvas');
+    canvas.width = size * 2;
+    canvas.height = size * 2;
+   
+    function getTextureCanvas() {
+        const duration = 1000;
+        const t = (performance.now() % duration) / duration;
+
+        const radius = (size / 2) * 0.3;
+        const outerRadius = (size / 2) * 0.7 * t + radius;
+        const context = canvas.getContext('2d');
+        context.save();
+        // 2倍图
+        context.scale(2, 2);
+        // Draw the outer circle.
+        context.clearRect(0, 0, size, size);
+        context.beginPath();
+        context.arc(
+            size / 2,
+            size / 2,
+            outerRadius,
+            0,
+            Math.PI * 2
+        );
+        context.fillStyle = 'rgba(255,200,200,' +(1 - t)+ ")"
+        context.fill();
+
+        context.beginPath();
+        context.arc(
+            size / 2,
+            size / 2,
+            radius,
+            0,
+            Math.PI * 2
+        );
+        context.fillStyle = 'rgba(255, 100, 100, 1)';
+        context.strokeStyle = 'white';
+        context.lineWidth = 2 + 4 * (1 - t);
+        context.fill();
+        context.stroke();
+        context.restore();
+
+    }
+
+    let angle = Math.PI / 3;
+    let speed = Math.PI / 100;
+    let scanBegin = 0;
+    let scanEnd = angle;
+    // 画布的宽高
+    const cWidth = canvas.width;
+    const cHeight = canvas.height;
+    // 中心点
+    const centerX = canvas.width / 2;
+    const centerY = canvas.height / 2;
+    // 半径
+    const radius = centerX * 0.9;
+    let blob = 50;
+    let increase = 0;
+  
+  // 绘制雷达扫描
+  function getRadarTextureCanvas() {
+          const ctx = canvas.getContext('2d');
+          ctx.clearRect(0, 0, cWidth, cHeight);
+
+          sAngle = scanBegin;
+          eAngle = scanEnd;
+
+          if (sAngle < eAngle) {
+              increase = (eAngle - sAngle) / blob;
+          }
+          else if (sAngle > eAngle) {
+              increase = (Math.PI * 2 - sAngle + eAngle) / blob;
+          }
+          else {
+              return;
+          }
+
+          let angle1 = sAngle;
+          let angle2 = sAngle + increase;
+          for (let i = 0; i < blob; i++) {
+              ctx.beginPath();
+              ctx.moveTo(centerX, centerY);
+              ctx.arc(centerX, centerY, radius, angle1, angle2);
+              ctx.fillStyle = "rgba(255,101,116," + i / blob + ")";
+              ctx.fill();
+              angle1 = angle2;
+              angle2 = angle1 + increase;
+              if (angle2 >= Math.PI * 2) {
+                  ctx.beginPath();
+                  ctx.moveTo(centerX, centerY);
+                  ctx.arc(centerX, centerY, radius, angle1, Math.PI * 2);
+                  ctx.fillStyle = "rgba(255,101,100," + i / blob + ")";
+                  angle1 = 0;
+                  angle2 = angle1 + increase;
+              }
+          }
+
+          scanBegin += speed;
+          scanEnd = scanBegin + angle;
+          // 超过阈值变为初始值
+          if (scanBegin >= Math.PI * 2) {
+              scanBegin = 0;
+              scanEnd = scanBegin + angle;
+          }
+      }
+
+
+    var pStart = new BMapGL.Point(106.404386,29.61127);
+    var pEnd = new BMapGL.Point(106.44463,29.635383);
+    var bounds = new BMapGL.Bounds(new BMapGL.Point(pStart.lng, pEnd.lat), new BMapGL.Point(pEnd.lng, pStart.lat));
+    var canvasOverlay = new BMapGL.GroundOverlay(bounds, {
+        type: 'canvas',
+        url: canvas,
+        opacity: .9,
+        isReDraw: true,
+        drawHook: getRadarTextureCanvas
+    });
+    getTextureCanvas();
+    map.addOverlay(canvasOverlay);
+    
+   // 雨点的动画
+   var STROKE = 0.08,
+        TAU = 2.0 * Math.PI,
+        TWO_OVER_SQRT_2 = 2.0 / Math.sqrt(2);
+    function circle(ctx, x, y, r) {
+        ctx.beginPath();
+        ctx.arc(x, y, r, 0, TAU, false);
+        ctx.fill();
+    }
+    function puff(ctx, t, cx, cy, rx, ry, rmin, rmax) {
+        var c = Math.cos(t * TAU),
+            s = Math.sin(t * TAU);
+
+        rmax -= rmin;
+
+        circle(
+            ctx,
+            cx - s * rx,
+            cy + c * 0.35 * ry + rmax * 0.5,
+            rmin + (1 - c * 0.5) * rmax
+        );
+    }
+    function puffs(ctx, t, cx, cy, rx, ry, rmin, rmax) {
+        var i;
+
+        for (i = 5; i--;)
+            puff(ctx, t + i / 5, cx, cy, rx, ry, rmin, rmax);
+    }
+
+    function cloudObject(ctx, t, cx, cy, cw, s, color) {
+        t /= 30000;
+
+        var a = cw * 0.21,
+            b = cw * 0.12,
+            c = cw * 0.24,
+            d = cw * 0.28;
+
+        ctx.fillStyle = color;
+        puffs(ctx, t, cx, cy, a, b, c, d);
+        ctx.fillStyle = '#999';
+        puffs(ctx, t, cx, cy, a, b, c - s, d - s);
+        ctx.globalCompositeOperation = 'source-over';
+    }
+   function rainObject(ctx, t, cx, cy, cw, s, color) {
+        t /= 1350;
+
+        var a = cw * 0.16,
+            b = TAU * 11 / 12,
+            c = TAU * 7 / 12,
+            i, p, x, y;
+
+        ctx.fillStyle = color;
+
+        for (i = 4; i--;) {
+            p = (t + i / 4) % 1;
+            x = cx + ((i - 1.5) / 1.5) * (i === 1 || i === 2 ? -1 : 1) * a;
+            y = cy + p * p * cw;
+            ctx.beginPath();
+            ctx.moveTo(x, y - s * 1.5);
+            ctx.arc(x, y, s * 0.75, b, c, false);
+            ctx.fill();
+        }
+    }
+    function RAIN(ctx, t, dotColor, clodColor) {
+        var w = ctx.canvas.width,
+            h = ctx.canvas.height,
+            s = Math.min(w, h);
+
+        rainObject(ctx, t, w * 0.5, h * 0.37, s * 0.9, s * STROKE, dotColor);
+        cloudObject(ctx, t, w * 0.5, h * 0.37, s * 0.9, s * STROKE, clodColor);
+    };
+   function RainSymbol(_size, _anchor) {
+        BMapGL.Symbol.call(this, _size, _anchor);
+        this.width = _size.width;
+        this.height = _size.height;
+        // 需要再addOverlay之前设置true，需要保证纹理大小不变化
+        this.isReDraw = true;
+    }
+    RainSymbol.prototype = new BMapGL.Symbol();
+    RainSymbol.prototype.constructor = RainSymbol;
+    RainSymbol.prototype.add = function () {
+        const canvas = document.createElement('canvas');
+        canvas.width = this.width * 2;
+        canvas.height = this.height * 2;
+        this.context = canvas.getContext('2d');
+        // this.isReDraw = false;
+
+    }
+    RainSymbol.prototype.render = function (map) {
+        this.context.clearRect(0, 0, this.width * 2, this.height * 2);
+        var time = Date.now();
+        RAIN(this.context, time, '#BFBFBF', '#999');
+        this.data = this.context.getImageData(
+            0,
+            0,
+            this.context.canvas.width,
+            this.context.canvas.height
+        );
+        return true;
+    }
+    var rain_logo = new RainSymbol(new BMapGL.Size(size / 3, size / 3), new BMapGL.Size(size / 10, size / 10));
+    var marker2 = new BMapGL.Marker(new BMapGL.Point(106.37794,29.583634), { icon: rain_logo, enableDragging: false });
+    map.addOverlay(marker2);
+
+</script>
