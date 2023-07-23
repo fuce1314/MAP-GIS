@@ -27,52 +27,51 @@
 
 </html>
 <script>
-  var map = new BMapGL.Map('container');
-  var point = new BMapGL.Point(106.461016,29.54669);
-  map.centerAndZoom(point, 10);
-  map.enableScrollWheelZoom();
-  map.setTilt(70);
+var map = new BMapGL.Map('container');
+var point = new BMapGL.Point(116.443, 39.935);
+map.centerAndZoom(point, 13);
+map.enableScrollWheelZoom();
+map.setTilt(70);
 
-
-  var citys = [{
-    name: '重庆大学',
+var citys = [{
+    name: '北京大学',
     img: '/jsdemo/img/beida.png'
-  }, {
-    name: '重庆大学',
+}, {
+    name: '清华大学',
     img: '/jsdemo/img/qinghua.png'
-  }, {
-    name: '重庆财经大学',
+}, {
+    name: '中央财经大学',
     img: '/jsdemo/img/zhongcai.png'
-  }, {
-    name: '重庆交通大学',
+}, {
+    name: '北京交通大学',
     img: '/jsdemo/img/beijiao.png'
-  }, {
-    name: '重庆工业大学',
+}, {
+    name: '北京工业大学',
     img: '/jsdemo/img/beigong.png'
-  }, {
-    name: '重庆邮电大学',
+}, {
+    name: '北京邮电大学',
     img: '/jsdemo/img/beiyou.png'
-  }, {
-    name: '重庆理工大学',
+}, {
+    name: '北京理工大学',
     img: '/jsdemo/img/beili.png'
-  }, {
-    name: '重庆航空航天大学',
+}, {
+    name: '北京航空航天大学',
     img: '/jsdemo/img/beihang.png'
-  }, {
-    name: '重庆传媒大学',
+}, {
+    name: '中国传媒大学',
     img: '/jsdemo/img/zhongchuan.png'
-  }];
+}];
 
-  var cityGeo = new BMapGL.Geocoder();
-  for (let i = 0; i < citys.length; i++) {
+var cityGeo = new BMapGL.Geocoder();
+for (let i = 0; i < citys.length; i++) {
     cityGeo.getPoint(citys[i].name, function (point) { // 地址解析获取对应经纬度
-      var pt = new BMapGL.Point(point.lng, point.lat);
-      var icon = new BMapGL.Icon(citys[i].img, new BMapGL.Size(40, 40));
-      var marker = new BMapGL.Marker3D(pt, Math.round(Math.random()) * 6000, {
-        size: 80,
-        icon: icon
-      });
-      map.addOverlay(marker);
+        var pt = new BMapGL.Point(point.lng, point.lat);
+        var icon = new BMapGL.Icon(citys[i].img, new BMapGL.Size(40, 40));
+        var marker = new BMapGL.Marker3D(pt, Math.round(Math.random()) * 6000, {
+            size: 80,
+            icon: icon
+        });
+        map.addOverlay(marker);
     });
-  }
+}
 </script>

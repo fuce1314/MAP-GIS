@@ -1,0 +1,160 @@
+.jsDemo {
+  font-size: 12px;
+  font-family: Helvetica, Arial, '微软雅黑', sans-serif;
+  margin: 0;
+  padding: 0;
+  margin: 0 0 0 250px;
+  /* overflow: hidden; */
+  width: 970px;
+  min-width: 970px;
+  line-height: 20px;
+  word-wrap: break-word;
+  position: relative;
+  padding: 30px 0px 150px 30px;
+  background-color: #FFFFFF;
+}
+.jsDemo_head {
+  font-size: 28px;
+  line-height: 28px;
+  font-family: 'PingFang-SC-Heavy';
+  font-size: 32px;
+  color: #141419;
+  letter-spacing: 0;
+  font-weight: 500;
+}
+.jsDemo_head1 {
+  font-family: 'PingFang-SC-Heavy';
+  font-size: 12px;
+  color: #333333;
+  letter-spacing: 0;
+  text-align: justify;
+  line-height: 12px;
+  font-weight: 400;
+  margin-bottom: 32px;
+}
+.jsDemo_head1 span {
+  color: #F5533D;
+}
+.jsDemo_head1 a {
+  color: #F5533D;
+  text-decoration: revert;
+}
+p {
+  margin: 0;
+}
+.jsDemo .jsBody_p {
+  margin-top: 40px;
+  /* margin-bottom: 17px; */
+  font-family: 'PingFangSC-Regular';
+  font-size: 24px;
+  color: #141419;
+  letter-spacing: 0;
+  line-height: 24px;
+  font-weight: 400;
+}
+.jsDemo_content {
+  display: flex;
+  margin-top: 20px;
+  position: relative;
+}
+.jsDemo_content:nth-child(3n) {
+  margin-right: 0px;
+}
+.jsDemo_content > div {
+  width: 290px;
+  height: 240px;
+  margin-right: 35px;
+  background: #878cb01a;
+  border-radius: 18px;
+  overflow: hidden;
+  position: relative;
+  /* background: url(//mapopen-website-wiki.bj.bcebos.com/demos/步行路线规划1@2x.png) center center no-repeat; */
+  background-size: 290px 240px;
+  cursor: pointer;
+}
+/* .jsDemo_content>div:hover .jsDemo_content_div_div_active{
+    transform: translateY(0px);
+} */
+.jsDemo_content > div > div {
+  width: 100%;
+  height: 87px;
+  position: absolute;
+  bottom: 0;
+  background: #404550b3;
+  box-shadow: 0 -1px 7px 0 #00000017 17;
+  transform: translateY(50px);
+  transition: .8s;
+}
+.jsDemo_content > div > div > div:first-child {
+  height: 27px;
+  line-height: 41px;
+  font-family: PingFangSC-Medium;
+  text-align: center;
+  font-size: 14px;
+  color: #FFF;
+  letter-spacing: 0;
+}
+.jsDemo_content > div > div > div:nth-child(2) {
+  height: 45px;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  color: #fff;
+}
+.jsDemo_content > div > div a {
+  position: absolute;
+  width: 288px;
+  height: 280px;
+  top: -203px;
+}
+.jsDemo_content_div:hover .jsDemo_content_div_div {
+  transform: translateY(0px);
+}
+.bodyin {
+  min-width: 1200px !important;
+  max-width: auto !important;
+  position: relative;
+  z-index: 4;
+  min-height: 800px;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+.leftBarAll {
+  width: 252px;
+  background: #FFFFFF;
+  border-radius: 4px;
+  font-family: PingFangSC-Regular;
+  position: absolute;
+  top: 0px;
+  left: -24px;
+  overflow: auto;
+}
+.leftBarAll > div:nth-child(1) {
+  background-color: #F5533D;
+  height: 52px;
+  font-family: PingFangSC-Medium;
+  font-size: 18px;
+  color: #FFFFFF;
+  letter-spacing: 0;
+  text-align: center;
+  line-height: 52px;
+  font-weight: 500;
+}
+.leftBarAll > div:nth-child(1) a {
+  color: #FFFFFF;
+}
+.jsDemo_active::before {
+  content: 'new';
+  width: 50px;
+  height: 22px;
+  position: absolute;
+  top: -10px;
+  right: 20px;
+  background-color: #404550cc;
+  z-index: 99;
+  text-align: center;
+  border-radius: 8px;
+  line-height: 22px;
+  color: #ffffff;
+}

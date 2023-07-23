@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSApi示例</title>
+    <link rel="stylesheet" href=css/jsDemo.css?20220826" type="text/css" media="screen" />
+    <link rel="stylesheet" href="css/leftSiderbar.css?20220826" type="text/css" media="screen" />
+    <style>
+        body {
+            margin: 0;
+        }
+
+        ul,
+        li {
+            list-style: none;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            /* color: #141419; */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="bodyin">
+        <!-- <div class="leftBarAll" style="position: fixed; left: 50%; top: 0px; margin: 0px 0px 0px -600px;"> -->
+        <!-- <iframe src="./leftSiderbar.html" style="border:none;" class="leftBarAll"></iframe> -->
+        <!-- </div> -->
+        <div class="leftBarAll">
+            <!-- <div style="padding: 10px 20px;border-left: 4px solid transparent"> -->
+                <div>
+                <!-- <img src="https://mapopen-website-wiki.bj.bcebos.com/demos/back.png" style="width: 10px;height: 12px;" /> -->
+                <a>示例中心</a>
+            </div>
+            <div class="leftBar"></div>
+        </div>
+        <div class="jsDemo">
+            <div class="jsDemo_head1">您当前的位置：<span>开发文档</span> > <a target="_blank" href="/index.php?title=jspopularGL">JavaScript API GL</a> > 示例DEMO</div>
+            <div class="jsDemo_head">JSAPI GL 示例</div>
+            <div class="jsDemo_body">
+                <!-- <p class="jsBody_p">地图展示</p> -->
+                <!-- <div class="jsDemo_content">
+                    <div class="jsDemo_content_div">
+                        <div class="jsDemo_content_div_div">
+                            <div>基本实例展示</div>
+                            <div>
+                                该示例展示如何使用GL版的JSAPI创建一张地图
+                            </div>
+                            <div>
+                                <a></a>
+                            </div>
+    
+                        </div>
+                    </div>
+                     
+                </div> -->
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script type="text/javascript" src="js/jsDemo.js?20230510"></script>
+<script type="text/javascript" src="js/leftSiderbar.js?20230510"></script>
+<script>
+    
+    var oDiv2 = document.querySelector('.leftBarAll');
+    
+    oDiv2.style.maxHeight =window.parent.document.documentElement.clientHeight +'px' 
+    // console.log(oDiv,'ff')
+    window.parent.document.onscroll = function () {
+    
+    var scrollT = window.parent.document.documentElement.scrollTop || window.parent.pageYOffset || window.parent.document.body.scrollTop;
+    if (scrollT >= 132) {
+         
+        if (scrollT >= document.getElementsByClassName('jsDemo')[0].clientHeight) {
+            console.log('///',)
+            oDiv2.style.top = 11394 + 'px';
+            return;
+        }
+        oDiv2.style.top = scrollT - 90 + 'px';
+        oDiv2.style.left = -24 + 'px';
+        // .classList.add('odivActive')
+        // oDiv.style.position = "fixed";
+        // oDiv.style.top = 0;
+        return;
+    }
+    oDiv2.style.position=''
+    oDiv2.style.left = -24 +'px';
+    oDiv2.style.top = 0;
+}
+</script>

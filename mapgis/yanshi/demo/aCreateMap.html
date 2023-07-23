@@ -1,0 +1,1099 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>地图JS API示例 | 百度地图开放平台</title>
+    <meta name="keywords" content="地图API|示例中心|3D地图|JS API|地图服务|地图示例">
+    <meta name="description" content="地图JS API示例中心，以示例的形式介绍百度地图JS API如何使用，为开发者提供丰富的应用参考。">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <link rel="stylesheet" href="css/codemirror.css?dev20220815">
+    <link rel="stylesheet" href="css/base.css?20220826">
+    <link rel="shortcut icon" href="img/lbsyunlogo_icon.ico">
+</head>
+<!-- htmlcs-disable -->
+<body onload="mapheight();">
+    <div id="header">
+        <a class="logo"><img src="img/logox2.png"></a>
+        <span>|</span>
+        <span>示例中心</span>
+    </div>
+    <div id="content">
+        <div id="menu">
+            <div class="first-title" fistId="1">地图基础</div>
+            <ul>
+                <li id="list_item1">
+                    <a class="one_head" listid="1"><i class="t_close"></i>创建地图</a>
+                    <div id="submenu1" class="submenu">
+                        <dl>
+                            <dd>
+                                <a href="jsdemo/demo/aCreateMap.htm" onclick="setIntro('aCreateMap');" target="container">创建GL地图</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/aAsynLoadMap.htm" onclick="setIntro('aAsynLoadMap');" target="container">异步加载地图</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/aLoadTwoMap.htm" onclick="setIntro('aLoadTwoMap');" target="container">加载两个地图</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/SetCitynameCenter.htm" onclick="setIntro('SetCitynameCenter');" target="container">根据城市名设置中心点</a>
+                            </dd>
+                        </dl>
+                    </div>
+                </li>
+                <li id="list_item1">
+                    <a class="one_head" listid="1"><i class="t_close"></i>地图属性</a>
+                    <div id="submenu1" class="submenu">
+                        <dl>
+                            <dd>
+                                <a href="jsdemo/demo/bSetGetMapZoom.htm" onclick="setIntro('bSetGetMapZoom');" target="container">设置/获取地图级别</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/bSetGetMapCenter.htm" onclick="setIntro('bSetGetMapCenter');" target="container">设置/获取地图中心点</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/bSetMaxAndMinZoom.htm" onclick="setIntro('bSetMaxAndMinZoom');" target="container">设置地图最大/最小级别</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/bSetHeading.htm" onclick="setIntro('bSetHeading');" target="container">设置地图3D视角</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/SetMapElementPOI.htm" onclick="setIntro('SetMapElementPOI');" target="container">设置底图POI的显示/隐藏</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/SetMapElementOverlay.htm" onclick="setIntro('SetMapElementOverlay');" target="container">设置元素的显示/隐藏</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/SetMapElementRoadNet.htm" onclick="setIntro('SetMapElementRoadNet');" target="container">设置路网显示/隐藏</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/SetMapElementSkyColors.htm" onclick="setIntro('SetMapElementSkyColors');" target="container">设置天空颜色</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/GLMapClick.htm" onclick="setIntro('GLMapClick');" target="container">设置底图可点</a>
+                            </dd>
+                        </dl>
+                    </div>
+                </li>
+                <li id="list_item2">
+                    <a class="one_head" listid="2"><i class="t_close"></i>地图控件</a>
+                    <div id="submenu2" class="submenu">
+                        <dl>
+                            <dd>
+                                <a href="jsdemo/demo/webgl2_0.htm" onClick="setIntro('webgl2_0');" target="container">添加比例尺/缩放控件</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/webgl2_1.htm" onClick="setIntro('webgl2_1');" target="container">添加3D控制控件</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/cLocation.htm" onClick="setIntro('cLocation');" target="container">添加定位相关控件</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/cCityList.htm" onclick="setIntro('cCityList');" target="container">添加城市列表控件
+                                    <!-- <span style="font-size: 10px; padding-left: 5px; color: red;">new</span> -->
+                                </a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/cSettingCopyright.htm" onClick="setIntro('cSettingCopyright');" target="container">添加第三方版权控件</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/cAddCustomControl.htm" onClick="setIntro('cAddCustomControl');" target="container">添加自定义控件</a>
+                            </dd>
+                            <!-- <dd>
+                                <a href="jsdemo/demo/b0_3.htm" onClick="setIntro('b0_3');" target="container">添加/删除地图类型、缩略图控件</a>
+                            </dd> -->
+                        </dl>
+                    </div>
+                </li>
+            </ul>
+            <div class="first-title" fistId="1">覆盖物</div>
+            <ul>
+                <li id="list_item4">
+                    <a class="one_head" listid="4"><i class="t_close"></i>通用属性</a>
+                    <div id="submenu4" class="submenu">
+                        <dl>
+                            <dd>
+                                <a href="jsdemo/demo/dAddClearOverlay.htm" onclick="setIntro('dAddClearOverlay');" target="container">添加/清除覆盖物</a>
+                            </dd>
+                        </dl>
+                    </div>
+                </li>
+                <li id="list_item3">
+                    <a class="one_head" listid="3"><i class="t_close"></i>点覆盖物</a>
+                    <div id="submenu3" class="submenu">
+                        <dl>
+                            <dd>
+                                <a href="jsdemo/demo/eAddMarker.htm" onclick="setIntro('eAddMarker');" target="container">添加点标记</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/eDraging.htm" onclick="setIntro('eDraging');" target="container">点标记可拖拽</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/eChangeMarkerIcon.htm" onclick="setIntro('eChangeMarkerIcon');" target="container">自定义Marker图标</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/eMarkerAddEvent.htm" onclick="setIntro('eMarkerAddEvent');" target="container">点标记添加点击事件</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/eMarker3d.htm" onclick="setIntro('eMarker3d');" target="container">带高度的点</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/eMarker3dIcon.htm" onclick="setIntro('eMarker3dIcon');" target="container">带高度的点纹理贴图</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/eAddLabel.htm" onclick="setIntro('eAddLabel');" target="container">自定义文本标注</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/gl-svg1.htm" onclick="setIntro('gl-svg1');" target="container">Symbol矢量图标</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/gl-svgIcon.htm" onclick="setIntro('gl-svgIcon');" target="container">svg加载以及动画图标</a>
+                            </dd>
+                            
+                        </dl>
+                    </div>
+                </li>
+                <li id="list_item3">
+                    <a class="one_head" listid="3"><i class="t_close"></i>矢量图形覆盖物</a>
+                    <div id="submenu3" class="submenu">
+                        <dl>
+                            <dd>
+                                <a href="jsdemo/demo/fLoukongPolygon.htm" onclick="setIntro('fLoukongPolygon');" target="container">镂空面绘制</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/fEditOverlay.htm" onclick="setIntro('fEditOverlay');" target="container">线面圆可编辑</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/webgl1_5.htm" onclick="setIntro('webgl1_5');" target="container">贝塞尔曲线</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/fLineRainbow.htm" onclick="setIntro('fLineRainbow');" target="container">彩虹渐变线</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/webgl1_6.htm" onclick="setIntro('webgl1_6');" target="container">3D棱柱</a>
+                            </dd>
+                        </dl>
+                    </div>
+                </li>
+                <li id="list_item3">
+                    <a class="one_head" listid="3"><i class="t_close"></i>自定义覆盖物</a>
+                    <div id="submenu3" class="submenu">
+                        <dl>
+                            <dd>
+                                <a href="jsdemo/demo/gl-overlay.htm" onclick="setIntro('gl-overlay');" target="container">添加自定义覆盖物</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/customoverlay-canvas.htm" onclick="setIntro('customoverlay-canvas');" target="container">自定义canvas覆盖物</a>
+                            </dd> 
+                            <dd>
+                                <a href="jsdemo/demo/customoverlay-dom.htm" onclick="setIntro('customoverlay-dom');" target="container">自定义DOM覆盖物</a>
+                            </dd>
+                        </dl>
+                    </div>
+                </li>
+                <li id="list_item7">
+                    <a class="one_head" listid="7"><i class="t_close"></i>叠加层</a>
+                    <div id="submenu7" class="submenu">
+                        <dl>
+                            <dd>
+                                <a href="jsdemo/demo/gImageGround.htm" onclick="setIntro('gImageGround');" target="container">地面图片叠加层</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/groundOverlayFixed.htm" onclick="setIntro('groundOverlayFixed');" target="container">固定屏幕叠加层</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/gCanvasGround.htm" onclick="setIntro('gCanvasGround');" target="container">地面Canvas叠加层</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/gVideoGround.htm" onclick="setIntro('gVideoGround');" target="container">地面Video叠加层</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/gAddRouteType.htm" onclick="setIntro('gAddRouteType');" target="container">叠加路况图层</a>
+                            </dd>
+                        </dl>
+                    </div>
+                </li>
+                <li id="list_item4">
+                    <a class="one_head" listid="4"><i class="t_close"></i>信息窗口</a>
+                    <div id="submenu4" class="submenu">
+                        <dl>
+                            <dd>
+                                <a href="jsdemo/demo/webgl1_4.htm" onclick="setIntro('webgl1_4');" target="container">添加信息窗口</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/hPicAndTextInfo.htm" onclick="setIntro('hPicAndTextInfo');" target="container">添加图文组合的信息窗口</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/d0_4.htm" onclick="setIntro('d0_4');" target="container">添加带检索功能的信息窗口</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/hGetInfoWinContent.htm" onclick="setIntro('hGetInfoWinContent');" target="container">获取信息窗口的内容</a>
+                            </dd>
+                        </dl>
+                    </div>
+                </li>
+                <li id="list_item5">
+                    <a class="one_head" listid="5"><i class="t_close"></i>右键菜单</a>
+                    <div id="submenu5" class="submenu">
+                        <dl>
+                            <dd>
+                                <a href="jsdemo/demo/jAddMenuItem.htm" onclick="setIntro('jAddMenuItem');" target="container">地图添加右键菜单</a>
+                            </dd>
+                            <!-- <dd>
+                                <a href="jsdemo/demo/jOverlayAddMenuItem.htm" onclick="setIntro('jOverlayAddMenuItem');" target="container">覆盖物添加右键菜单</a>
+                            </dd> -->
+                        </dl>
+                    </div>
+                </li>
+                <li id="list_item9">
+                    <a class="one_head" listid="9"><i class="t_close"></i>轨迹运动</a>
+                    <div id="submenu9" class="submenu">
+                        <dl>
+                            <dd>
+                                <a href="jsdemo/demo/webgl1_7.htm" onclick="setIntro('webgl1_7');" target="container">大地线路书</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/webgl6_0.htm" onclick="setIntro('webgl6_0');" target="container">展示3D视角动画</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/webgl6_1.htm" onclick="setIntro('webgl6_1');" target="container">轨迹视角动画</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/fAnimationPause.htm" onclick="setIntro('fAnimationPause');" target="container">轨迹动画暂停与继续</a>
+                            </dd>
+                        </dl>
+                    </div>
+                </li>
+                <li id="list_item12">
+                    <a class="one_head" listid="12"><i class="t_close"></i>三维模型</a>
+                    <div id="submenu12" class="submenu">
+                        <dl>
+                            <dd>
+                                <a href="jsdemo/demo/three-object.htm" onclick="setIntro('three-object');" target="container">三维模型图层</a>
+                            </dd>
+                        </dl>
+                    </div>
+                </li>
+            </ul>
+            <div class="first-title" fistId="1">事件</div>
+            <ul>
+                <li id="list_item8">
+                    <a class="one_head" listid="8"><i class="t_close"></i>地图事件</a>
+                    <div id="submenu8" class="submenu">
+                        <dl>
+                            <dd>
+                                <a href="jsdemo/demo/kMapLoadOverEvent.htm" onclick="setIntro('kMapLoadOverEvent');" target="container">地图加载完成事件</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/kMapClickEvent.htm" onclick="setIntro('kMapClickEvent');" target="container">地图单击事件</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/kMapRemoveEvent.htm" onclick="setIntro('kMapRemoveEvent');" target="container">注销事件</a>
+                            </dd>
+                        </dl>
+                    </div>
+                </li>
+                <li id="list_item8">
+                    <a class="one_head" listid="8"><i class="t_close"></i>覆盖物事件</a>
+                    <div id="submenu8" class="submenu">
+                        <dl>
+                            <dd>
+                                <a href="jsdemo/demo/kOverlayAddEvent.htm" onclick="setIntro('kOverlayAddEvent');" target="container">覆盖物鼠标事件</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/kPrismAddEvent.htm" onclick="setIntro('kPrismAddEvent');" target="container">棱柱鼠标事件</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/kMarker3dAddEvent.htm" onclick="setIntro('kMarker3dAddEvent');" target="container">带高度的点鼠标事件</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/kSendEventInfo.htm" onclick="setIntro('kSendEventInfo');" target="container">传递事件参数</a>
+                            </dd>
+                        </dl>
+                    </div>
+                </li>
+            </ul>
+            <div class="first-title" fistId="1">地图样式</div>
+            <ul>
+                <li id="list_item11">
+                    <a class="one_head" listid="11"><i class="t_close"></i>个性化地图</a>
+                    <div id="submenu11" class="submenu">
+                        <dl>
+                            <dd>
+                                <a href="jsdemo/demo/lcustomStyle.htm" onclick="setIntro('lcustomStyle');" target="container">根据json文件实现个性化地图</a>
+                            </dd>
+                        </dl>
+                    </div>
+                </li>
+                <li id="list_item11">
+                    <a class="one_head" listid="11"><i class="t_close"></i>卫星地球模式</a>
+                    <div id="submenu11" class="submenu">
+                        <dl>
+                            <dd>
+                                <a href="jsdemo/demo/webgl0_2.htm" onclick="setIntro('webgl0_2');" target="container">卫星地球</a>
+                            </dd>
+                        </dl>
+                    </div>
+                </li>
+                <li id="list_item11">
+                    <a class="one_head" listid="11"><i class="t_close"></i>全景地图</a>
+                    <div id="submenu11" class="submenu">
+                        <dl>
+                            <dd>
+                                <a href="jsdemo/demo/panoControl.htm" onclick="setIntro('panoControl');" target="container">全景图控件</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/webgl-pano2.htm" onclick="setIntro('webgl-pano2');" target="container">获取指定的全景图</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/webgl-pano1.htm" onclick="setIntro('webgl-pano1');" target="container">叠加全景图层</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/webgl-pano6.htm" onclick="setIntro('webgl-pano6');" target="container">显示/隐藏全景导航控件</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/webgl-pano7.htm" onclick="setIntro('webgl-pano7');" target="container">显示/隐藏全景道路指引控件</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/webgl-pano5.htm" onclick="setIntro('webgl-pano5');" target="container">添加全景标注点示例</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/webgl-pano4.htm" onclick="setIntro('webgl-pano4');" target="container">全景图旋转</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/webgl-pano3.htm" onclick="setIntro('webgl-pano3');" target="container">获取全景图数据</a>
+                            </dd>
+                        </dl>
+                    </div>
+                </li>
+                <li id="list_item11">
+                    <a class="one_head" listid="11"><i class="t_close"></i>区域掩膜</a>
+                    <div id="submenu11" class="submenu">
+                        <dl>
+                            <dd>
+                                <a href="jsdemo/demo/bmapmask2.htm" onclick="setIntro('bmapmask2');" target="container">展示部分区域</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/bmapmask1.htm" onclick="setIntro('bmapmask1');" target="container">隐藏某块区域</a>
+                            </dd>
+                        </dl>
+                    </div>
+                </li>
+                <!-- <li id="list_item10">
+                    <a class="one_head" listid="10"><i class="t_close"></i>全景图</a>
+                    <div id="submenu10" class="submenu">
+                        <dl>
+                            <dd>
+                                <a href="jsdemo/demo/j1_0.htm" onClick="setIntro('j1_0');" target="container">全景控件展示</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/j1_1.htm" onClick="setIntro('j1_1');" target="container">获取指定的全景图</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/j1_2.htm" onClick="setIntro('j1_2');" target="container">叠加全景图层</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/j5_3.htm" onClick="setIntro('j5_3');" target="container">显示/隐藏全景导航控件<span style="font-size: 10px; padding-left: 5px; color: red;">new</span></a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/j5_4.htm" onClick="setIntro('j5_4');" target="container">显示/隐藏全景道路指引控件<span style="font-size: 10px; padding-left: 5px; color: red;">new</span></a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/j5_5.htm" onClick="setIntro('j5_5');" target="container">添加/删除全景相册控件<span style="font-size: 10px; padding-left: 5px; color: red;">new</span></a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/j5_7.htm" onClick="setIntro('j5_7');" target="container">显示/隐藏室内景切换控件<span style="font-size: 10px; padding-left: 5px; color: red;">new</span></a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/j5_8.htm" onClick="setIntro('j5_8');" target="container">添加全景标注点示例<span style="font-size: 10px; padding-left: 5px; color: red;">new</span></a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/j5_9.htm" onClick="setIntro('j5_9');" target="container">设置全景内展示的POI类型<span style="font-size: 10px; padding-left: 5px; color: red;">new</span></a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/j2_0.htm" onClick="setIntro('j2_0');" target="container">全景图旋转</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/j4_0.htm" onClick="setIntro('j4_0');" target="container">全景图事件</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/j3_0.htm" onClick="setIntro('j3_0');" target="container">获取全景图数据</a>
+                            </dd>
+                        </dl>
+                    </div>
+                </li> -->
+            </ul>
+            <div class="first-title" fistId="1">检索服务</div>
+            <ul>
+                <li id="list_item12">
+                    <a class="one_head" listid="12"><i class="t_close"></i>检索示例</a>
+                    <div id="submenu12" class="submenu">
+                        <dl>
+                            <dd>
+                                <a href="jsdemo/demo/localSearchKey.htm" onClick="setIntro('localSearchKey');" target="container">关键字检索</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/localSearchKeyGroup.htm" onClick="setIntro('localSearchKeyGroup');" target="container">多关键字检索</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/localSearchKeyPolygon.htm" onClick="setIntro('localSearchKeyPolygon');" target="container">矩形区域检索</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/localSearchKeyCircle.htm" onClick="setIntro('localSearchKeyCircle');" target="container">圆形区域检索</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/localSearchKeyPanel.htm" onClick="setIntro('localSearchKeyPanel');" target="container">本地检索的结果面板</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/localSearchKeyData.htm" onClick="setIntro('localSearchKeyData');" target="container">本地检索的数据接口</a>
+                            </dd>
+                        </dl>
+                    </div>
+                </li>
+                <li id="list_item18">
+                    <a class="one_head" listid="18"><i class="t_close"></i>输入提示示例</a>
+                    <div id="submenu18" class="submenu">
+                        <dl>
+                            <dd>
+                                <a href="jsdemo/demo/a6_2.htm" onClick="setIntro('a6_2');" target="container">关键字提示输入</a>
+                            </dd>
+                        </dl>
+                    </div>
+                </li>
+            </ul>
+            <div class="first-title" fistId="1">图层服务</div>
+            <ul>
+                <li id="list_item12">
+                    <a class="one_head" listid="12"><i class="t_close"></i>三方标准图层</a>
+                    <div id="submenu12" class="submenu">
+                        <dl>
+                            <dd>
+                                <a href="jsdemo/demo/wms.htm" onClick="setIntro('wms');" target="container">WMS图层</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/wmts.htm" onClick="setIntro('wmts');" target="container">WMTS图层</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/tms.htm" onClick="setIntro('tms');" target="container">TMS图层</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/custom.htm" onClick="setIntro('custom');" target="container">自定义栅格图层</a>
+                            </dd>
+                        </dl>
+                    </div>
+                </li>
+                <li id="list_item12">
+                    <a class="one_head" listid="12"><i class="t_close"></i>简易行政区图层</a>
+                    <div id="submenu12" class="submenu">
+                        <dl>
+                            <dd>
+                                <a href="jsdemo/demo/DistrictBigLoc.htm" onClick="setIntro('DistrictBigLoc');" target="container">行政大区</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/DistrictLevel.htm" onClick="setIntro('DistrictLevel');" target="container">多级省区</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/DistrictEvent.htm" onClick="setIntro('DistrictEvent');" target="container">行政区鼠标事件</a>
+                            </dd>
+                        </dl>
+                    </div>
+                </li>
+                <li id="list_item12">
+                    <a class="one_head" listid="12"><i class="t_close"></i>像素个性化</a>
+                    <div id="submenu12" class="submenu">
+                        <dl>
+                            <dd>
+                                <a href="jsdemo/demo/pixel-demo-1.htm" onclick="setIntro('pixel-demo-1');" target="container">图像覆盖物</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/pixel-demo-2.htm" onclick="setIntro('pixel-demo-2');" target="container">基于三方标准图层</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/pixel-demo-3.htm" onclick="setIntro('pixel-demo-3');" target="container">MapVGL像素图层</a>
+                            </dd>
+                        </dl>
+                    </div>
+                </li>
+                <li id="list_item12">
+                    <a class="one_head" listid="12"><i class="t_close"></i>GeoJSON图层</a>
+                    <div id="submenu12" class="submenu">
+                        <dl>
+                            <dd>
+                                <a href="jsdemo/demo/webgl-layer-geojson-parse.htm" onclick="setIntro('webgl-layer-geojson-parse');" target="container">GeoJSONParse立体效果</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/webgl-layer-geojson.htm" onclick="setIntro('webgl-layer-geojson');" target="container">GeoJSONLayer图层</a>
+                            </dd>
+                        </dl>
+                    </div>
+                </li>
+                <li id="list_item12">
+                    <a class="one_head" listid="12"><i class="t_close"></i>MVT标准图层</a>
+                    <div id="submenu12" class="submenu">
+                        <dl>
+                            <dd>
+                                <a href="jsdemo/demo/mvtLayer.htm" onclick="setIntro('mvtLayer');" target="container">MVT标准图层</a>
+                            </dd>
+                        </dl>
+                    </div>
+                </li>
+                <li id="list_item12">
+                    <a class="one_head" listid="12"><i class="t_close"></i>线图层</a>
+                    <div id="submenu12" class="submenu">
+                        <dl>
+                            <dd>
+                                <a href="jsdemo/demo/solidLineLayer.htm" onclick="setIntro('solidLineLayer');" target="container">标准线</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/strokeLineLayer.htm" onclick="setIntro('strokeLineLayer');" target="container">贴图线</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/sequenceLineLayer.htm" onclick="setIntro('sequenceLineLayer');" target="container">间隔图标填充</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/lineLayerMuti.htm" onclick="setIntro('lineLayerMuti');" target="container">蚯蚓线</a>
+                            </dd>
+                        </dl>
+                    </div>
+                </li>
+                <li id="list_item12">
+                    <a class="one_head" listid="12"><i class="t_close"></i>面图层</a>
+                    <div id="submenu12" class="submenu">
+                        <dl>
+                            <dd>
+                                <a href="jsdemo/demo/fillLayer.htm" onclick="setIntro('fillLayer');" target="container">标准面</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/patternFillLayer.htm" onclick="setIntro('patternFillLayer');" target="container">纹理填充面</a>
+                            </dd>
+                        </dl>
+                    </div>
+                </li>
+                <li id="list_item12">
+                    <a class="one_head" listid="12"><i class="t_close"></i>自定义HTML图层</a>
+                    <div id="submenu12" class="submenu">
+                        <dl>
+                            <dd>
+                                <a href="jsdemo/demo/customlayer-canvas.htm" onclick="setIntro('customlayer-canvas');" target="container">自定义canvas图层</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/customlayer.htm" onclick="setIntro('customlayer');" target="container">自定义gif动画</a>
+                            </dd>
+                        </dl>
+                    </div>
+                </li>
+            </ul>
+            <div class="first-title" fistId="1">路线规划</div>
+            <ul>
+                <li id="list_item14">
+                    <a class="one_head" listid="14"><i class="t_close"></i>驾车线路规划</a>
+                    <div id="submenu14" class="submenu">
+                        <dl>
+                            <dd>
+                                <a href="jsdemo/demo/drivingroute1.htm" onClick="setIntro('drivingroute1');" target="container">根据起终点经纬度查询驾车路线</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/sCaculateDriveTime.htm" onClick="setIntro('sCaculateDriveTime');" target="container">计算驾车时间和距离</a>
+                            </dd>
+                        </dl>
+                    </div>
+                </li>
+                <li id="list_item15">
+                    <a class="one_head" listid="15"><i class="t_close"></i>步行规划</a>
+                    <div id="submenu15" class="submenu">
+                        <dl>
+                            <dd>
+                                <a href="jsdemo/demo/uNameWalkPath.htm" onClick="setIntro('uNameWalkPath');" target="container">根据起终点名称规划步行线路</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/uWalkNavPanel.htm" onClick="setIntro('uWalkNavPanel');" target="container">步行规划结果面板</a>
+                            </dd>
+                        </dl>
+                    </div>
+                </li>
+                <li id="list_item13">
+                    <a class="one_head" listid="13"><i class="t_close"></i>公交检索接口</a>
+                    <div id="submenu13" class="submenu">
+                        <dl>
+                            <dd>
+                                <a href="jsdemo/demo/tBusSubwayRoute.htm" onClick="setIntro('tBusSubwayRoute');" target="container">查询公交、地铁线路</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/tBusTimeAndDistance.htm" onClick="setIntro('tBusTimeAndDistance');" target="container">获取公交换乘的时间、距离</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/tBusLngLatSearch.htm" onClick="setIntro('tBusLngLatSearch');" target="container">根据起终点经纬度查询公交换乘</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/tBusBlurSearch.htm" onClick="setIntro('tBusBlurSearch');" target="container">起终点不明确的公交换乘</a>
+                            </dd>
+                        </dl>
+                    </div>
+                </li>
+                <li id="list_item15">
+                    <a class="one_head" listid="15"><i class="t_close"></i>骑行路线规划</a>
+                    <div id="submenu15" class="submenu">
+                        <dl>
+                            <dd>
+                                <a href="jsdemo/demo/jsGl_1.htm" onClick="setIntro('jsGl_1');" target="container">骑行路线规划</a>
+                            </dd>
+                        </dl>
+                    </div>
+                </li>
+            </ul>
+            <div class="first-title" fistId="1">其他LBS服务</div>
+            <ul>
+                <li id="list_item25">
+                    <a class="one_head" listid="25"><i class="t_close"></i>正/逆地址解析</a>
+                    <div id="submenu25" class="submenu">
+                        <dl>
+                            <dd>
+                                <a href="jsdemo/demo/wAddressParseSingle.htm" onclick="setIntro('wAddressParseSingle');" target="container">地址解析</a>
+							</dd>
+							<dd>
+                                <a href="jsdemo/demo/wAddressParseGroup.htm" onclick="setIntro('wAddressParseGroup');" target="container">地址批量解析</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/xRevAddressParseSingle.htm" onclick="setIntro('xRevAddressParseSingle');" target="container">地址逆解析</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/xRevAddressParseGroup.htm" onclick="setIntro('xRevAddressParseGroup');" target="container">地址批量逆解析</a>
+                            </dd>
+                        </dl>
+                    </div>
+                </li>
+                <li id="list_item17">
+                    <a class="one_head" listid="17"><i class="t_close"></i>坐标转换</a>
+                    <div id="submenu17" class="submenu">
+                        <dl>
+                            <dd>
+                                <a href="jsdemo/demo/TranslateggTobd.htm" onClick="setIntro('TranslateggTobd');" target="container">google坐标转成百度坐标</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/TranslateoriTobd.htm" onClick="setIntro('TranslateoriTobd');" target="container">原始坐标转成百度坐标</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/Translategroup.htm" onClick="setIntro('Translategroup');" target="container">批量坐标转换</a>
+                            </dd>
+                        </dl>
+                    </div>
+                </li>
+                <li id="list_item19">
+                    <a class="one_head" listid="19"><i class="t_close"></i>定位示例</a>
+                    <div id="submenu19" class="submenu">
+                        <dl>
+                            <!-- <dd>
+                                <a href="jsdemo/demo/i8_1.htm" onClick="setIntro('i8_1');" target="container">浏览器定位</a>
+                            </dd> -->
+                            <dd>
+                                <a href="jsdemo/demo/yCityLocation.htm" onClick="setIntro('yCityLocation');" target="container">根据城市名定位</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/yLngLatLocation.htm" onClick="setIntro('yLngLatLocation');" target="container">根据经纬度定位</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/yDivisions.htm" onClick="setIntro('yDivisions');" target="container">行政区划归属获取</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/localCity.htm" onClick="setIntro('localCity');" target="container">定位当前城市</a>
+                            </dd>
+                        </dl>
+                    </div>
+                </li>
+            </ul>
+            <div class="first-title" fistId="1">辅助工具</div>
+            <ul>
+                <li id="list_item25">
+                    <a class="one_head" listid="25"><i class="t_close"></i>BMapGLLib（GL版）</a>
+                    <div id="submenu25" class="submenu">
+                        <dl>
+                            <dd>
+                                <a href="jsdemo/demo/gl_tool_1.htm" onclick="setIntro('gl_tool_1');" target="container">鼠标测距功能</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/gl_tool_2.htm" onclick="setIntro('gl_tool_2');" target="container">鼠标绘制功能</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/gl_tool_3.htm" onclick="setIntro('gl_tool_3');" target="container">面积测量</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/gl_tool_4.htm" onclick="setIntro('gl_tool_4');" target="container">区域限制</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/gl_tool_5.htm" onclick="setIntro('gl_tool_5');" target="container">路书</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/gl_tool_7.htm" onclick="setIntro('gl_tool_7');" target="container">富文本标记</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/gl_tool_8.htm" onclick="setIntro('gl_tool_8');" target="container">自定义信息窗口</a>
+                            </dd>
+                        </dl>
+                    </div>
+                </li>
+                <!-- <li id="list_item6">
+                    <a class="one_head" listid="6"><i class="t_close"></i>BMapLib（2.0版）</a>
+                    <div id="submenu6" class="submenu">
+                        <dl>
+                            <dd>
+                                <a href="jsdemo/demo/f0_5.htm" onclick="setIntro('f0_5');" target="container">鼠标拉框放大地图</a>
+                            </dd>
+                        </dl>
+                    </div>
+                </li> -->
+                <li id="">
+                    <a class="one_head" listid="6" href="//lbsyun.baidu.com/solutions/mapvdata"><i class="t_close"></i>数据可视化</a>
+                </li>
+            </ul>
+            <div class="first-title" fistId="1">室内图JS API</div>
+            <ul>
+                
+                <li id="list_item23">
+                    <a class="one_head" listid="23"><i class="t_close"></i>室内图JS API</a>
+                    <div id="submenu23" class="submenu">
+                        <dl>
+                            <dd>
+                                <a href="jsdemo/demo/indoorGl0_0.htm" onClick="setIntro('indoorGl0_0');" target="container">室内图展示</a>
+                            </dd>
+                            <!-- <dd>
+                                <a href="jsdemo/demo/indoor1_0.htm" onClick="setIntro('indoor1_0');" target="container">启用/禁用室内图</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/indoor2_0.htm" onClick="setIntro('indoor2_0');" target="container">显示/隐藏室内图楼层切换控件</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/indoor2_1.htm" onClick="setIntro('indoor2_1');" target="container">设置室内图楼层</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/indoor3_0.htm" onClick="setIntro('indoor3_0');" target="container">显示/隐藏地图底图</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/indoor3_1.htm" onClick="setIntro('indoor3_1');" target="container">显示/隐藏室内图图标文字</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/indoor4_0.htm" onClick="setIntro('indoor4_0');" target="container">根据uid设置室内图展示</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/indoor4_1.htm" onClick="setIntro('indoor4_1');" target="container">室内图信息图文窗口</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/indoor4_2.htm" onClick="setIntro('indoor4_2');" target="container">根据参数初始化室内图</a>
+                            </dd> -->
+                        </dl>
+                    </div>
+                </li>
+            </ul>
+            <div class="first-title" fistId="1">地铁图JS API</div>
+            <ul>
+                <!-- <li id="list_item21">
+                    <a class="one_head" listid="21"><i class="t_close"></i>JavaScript API v3.0</a>
+                    <div id="submenu21" class="submenu">
+                        <dl>
+                            <dd>
+                                <a href="jsdemo/demo/canvaslayer.htm" onClick="setIntro('canvaslayer');" target="container">自定义绘制层</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/drivingroute.htm" onClick="setIntro('drivingroute');" target="container">驾车路线规划</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/transitroute.htm" onClick="setIntro('transitroute');" target="container">公交路线规划</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/walkingroute.htm" onClick="setIntro('walkingroute');" target="container">步行路线规划</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/ridingroute.htm" onClick="setIntro('ridingroute');" target="container">骑行路线规划</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/mapstylev2.htm" onClick="setIntro('mapstylev2');" target="container">个性化地图v2</a>
+                            </dd>
+                        </dl>
+                    </div>
+                </li> -->
+                <!-- <li id="list_item24">
+                    <a class="one_head" listid="24"><i class="t_close"></i>JavaScript API v2.0</a>
+                    <div id="submenu24" class="submenu">
+                        <dl>
+                            <dd>
+                                <a href="jsdemo/demo/a2_1.htm" onclick="setIntro('a2_1');" target="container">根据城市名设置地图中心点</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/a3_1.htm" onClick="setIntro('a3_1');" target="container">移动地图</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/a3_3.htm" onClick="setIntro('a3_3');" target="container">拖拽地图</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/a1_7.htm" onClick="setIntro('a1_7');" target="container">设置地图显示范围</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/a7_1.htm" onClick="setIntro('a7_1');" target="container">关闭默认地图POI事件</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/c1_25.htm" onClick="setIntro('c1_25');" target="container">折线上添加方向箭头</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/c1_2.htm" onClick="setIntro('c1_2');" target="container">设置点的弹跳动画</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/c2_2.htm" onClick="setIntro('c2_2');" target="container">设置点是否可拖拽</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/c2_9.htm" onClick="setIntro('c2_9');" target="container">设置线、面可编辑</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/c1_14.htm" onClick="setIntro('c1_14');" target="container">添加文字标签</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/c2_3.htm" onClick="setIntro('c2_3');" target="container">设置覆盖物的文字标签</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/c1_6.htm" onClick="setIntro('c1_6');" target="container">加载闪烁点</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/c1_19.htm" onClick="setIntro('c1_19');" target="container">加载海量点<span style="font-size: 10px; padding-left: 5px; color: red;">new</span></a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/c1_13.htm" onClick="setIntro('c1_13');" target="container">添加弧线</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/c1_10.htm" onClick="setIntro('c1_10');" target="container">添加行政区划</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/c1_11.htm" onClick="setIntro('c1_11');" target="container">添加自定义覆盖物</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/c1_18.htm" onClick="setIntro('c1_18');" target="container">添加/删除地面叠加层</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/c1_4.htm" onClick="setIntro('c1_4');" target="container">点聚合</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/c1_15.htm" onClick="setIntro('c1_15');" target="container">添加热力图</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/c1_20.html" onClick="setIntro('c1_20');" target="container">矢量图标<span style="font-size: 10px; padding-left: 5px; color: red;">new</span></a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/g0_2.htm" onClick="setIntro('g0_2');" target="container">叠加/删除清华微观图</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/g0_5.htm" onClick="setIntro('g0_5');" target="container">叠加/删除自定义网格</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/c2_5.htm" onClick="setIntro('c2_5');" target="container">单个点沿线运动</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/c2_6.htm" onClick="setIntro('c2_6');" target="container">多点沿线运动</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/c2_8.htm" onClick="setIntro('c2_8');" target="container">路书</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/i4_1.htm" onClick="setIntro('i4_1');" target="container">根据起终点名称查询公交换乘</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/i4_7.htm" onClick="setIntro('i4_7');" target="container">公交换乘的结果面板</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/i4_8.htm" onClick="setIntro('i4_8');" target="container">公交换乘的数据接口</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/i4_9.htm" onClick="setIntro('i4_9');" target="container">修改公交换乘的起终点图标</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/i5_9.htm" onClick="setIntro('i5_9');" target="container">动态设置驾车途经点</a>
+                            </dd> 
+                            <dd>
+                                <a href="jsdemo/demo/i5_8.htm" onClick="setIntro('i5_8');" target="container">驾车路线的结果面板</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/i5_7.htm" onClick="setIntro('i5_7');" target="container">驾车路线的数据接口</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/i5_1.htm" onClick="setIntro('i5_1');" target="container">根据起终点名称查询驾车路线</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/i5_4.htm" onClick="setIntro('i5_4');" target="container">鼠标拖拽驾车起终点/途经点</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/i1_1.htm" onClick="setIntro('i1_1');" target="container">关键字检索</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/i1_3.htm" onClick="setIntro('i1_3');" target="container">多关键字检索</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/i1_2.htm" onClick="setIntro('i1_2');" target="container">矩形区域检索</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/i3_2.htm" onClick="setIntro('i3_2');" target="container">圆形区域检索</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/i1_6.htm" onClick="setIntro('i1_6');" target="container">本地检索的结果面板</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/i1_4.htm" onClick="setIntro('i1_4');" target="container">本地检索的数据接口</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/i3_4.htm" onClick="setIntro('i3_4');" target="container">检索LBS云数据</a>
+                            </dd>
+                        </dl>
+                    </div>
+                </li> -->
+                <!-- <li id="list_item20">
+                    <a class="one_head" listid="20"><i class="t_close"></i>JavaScript API Lite</a>
+                    <div id="submenu20" class="submenu">
+                        <dl>
+                            <dd>
+                                <a href="jsdemo/demo/lite_0_0.htm" onClick="setIntro('lite_0_0');" target="container">基础地图</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/lite_0_1.htm" onClick="setIntro('lite_0_1');" target="container"> 个性化地图</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/lite_1_0.htm" onClick="setIntro('lite_1_0');" target="container"> 缩放控件</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/lite_1_1.htm" onClick="setIntro('lite_1_1');" target="container"> 比例尺控件</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/lite_1_2.htm" onClick="setIntro('lite_1_2');" target="container"> 自定义控件</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/lite_2_0.htm" onClick="setIntro('lite_2_0');" target="container"> 点标注覆盖物</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/lite_2_1.htm" onClick="setIntro('lite_2_1');" target="container"> 自定义覆盖物</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/lite_2_2.htm" onClick="setIntro('lite_2_2');" target="container"> 海量覆盖物</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/lite_3_0.htm" onClick="setIntro('lite_3_0');" target="container"> 地图事件</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/lite_3_1.htm" onClick="setIntro('lite_3_1');" target="container"> 点覆盖物事件</a>
+                            </dd>
+                        </dl>
+                    </div>
+                </li> -->
+                <li id="list_item22">
+                    <a class="one_head" listid="22"><i class="t_close"></i>地铁图JS API</a>
+                    <div id="submenu22" class="submenu">
+                        <dl>
+                            <dd>
+                                <a href="jsdemo/demo/subway0_0.htm" onClick="setIntro('subway0_0');" target="container">地铁图展示</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/subway1_0.htm" onClick="setIntro('subway1_0');" target="container">缩放控件</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/subway2_0.htm" onClick="setIntro('subway2_0');" target="container">站点标注</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/subway2_1.htm" onClick="setIntro('subway2_1');" target="container">信息窗口</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/subway3_0.htm" onClick="setIntro('subway3_0');" target="container">站点点击事件</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/subway3_1.htm" onClick="setIntro('subway3_1');" target="container">地铁图加载事件</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/subway4_0.htm" onClick="setIntro('subway4_0');" target="container">站点详情检索</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/subway4_1.htm" onClick="setIntro('subway4_1');" target="container">地铁路线规划</a>
+                            </dd>
+                        </dl>
+                    </div>
+                </li>
+                <li id="list_item23">
+                    <a class="one_head" listid="23"><i class="t_close"></i>室内图JS API</a>
+                    <div id="submenu23" class="submenu">
+                        <dl>
+                            <dd>
+                                <a href="jsdemo/demo/indoorGl0_0.htm" onClick="setIntro('indoorGl0_0');" target="container">室内图展示</a>
+                            </dd>
+                            <!-- <dd>
+                                <a href="jsdemo/demo/indoor1_0.htm" onClick="setIntro('indoor1_0');" target="container">启用/禁用室内图</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/indoor2_0.htm" onClick="setIntro('indoor2_0');" target="container">显示/隐藏室内图楼层切换控件</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/indoor2_1.htm" onClick="setIntro('indoor2_1');" target="container">设置室内图楼层</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/indoor3_0.htm" onClick="setIntro('indoor3_0');" target="container">显示/隐藏地图底图</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/indoor3_1.htm" onClick="setIntro('indoor3_1');" target="container">显示/隐藏室内图图标文字</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/indoor4_0.htm" onClick="setIntro('indoor4_0');" target="container">根据uid设置室内图展示</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/indoor4_1.htm" onClick="setIntro('indoor4_1');" target="container">室内图信息图文窗口</a>
+                            </dd>
+                            <dd>
+                                <a href="jsdemo/demo/indoor4_2.htm" onClick="setIntro('indoor4_2');" target="container">根据参数初始化室内图</a>
+                            </dd> -->
+                        </dl>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div id="code_area" unselectable="on">
+            <div id="openbar" unselectable="on">
+                <div id="d_menu">
+                    <div id="d_clip_container">
+                        <a id="d_clip_button" class="copy" style="z-index: 1000;">复制</a>
+                    </div>
+                    <div id="d_run_container">
+                        <a id="d_run_button" onClick="run();" class="run">运行</a>
+                    </div>
+                    <div id="d_refresh_container">
+                        <a id="d_refresh_button" onClick="refresh();">刷新</a>
+                    </div>
+                    <div id="d_help_container">
+                        <a id="d_help_button" href="/faq/search" target="_blank">帮助</a>
+                    </div>
+                </div>
+                <p class="coding-title">
+                    源代码编辑器
+                </p>
+            </div>
+            <textarea id="myresource" class="clearfix" onChange="clip.setText(this.value)"></textarea>
+            <!-- <div class="console-wrap" id="console-wrap">
+                <div class="console-header">
+                    <span class="coding-title">控制台</span>
+                    <span id="code-clear" class="code-clear">清空</span>
+                </div>
+                <div id="editor-js-console">
+                    <div id="editor-output"></div>
+                    <div id="editor-code-console" class="editor-console-content">
+                    </div>
+                </div>
+            </div> -->
+            <div id="code_close" onClick="toggleFooter();"></div>
+        </div>
+        <div id="drag"></div>
+        <div id="mapContent" class="clearfix">
+            <div id="code_open" onClick="toggleFooter();"></div>
+            <div id="overiframe" style=" background:url(about:_blank);" unselectable="on"></div>
+            <iframe class="" unselectable="on" name="container" id="container" src="jsdemo/demo/a1_2.htm"></iframe>
+        </div>
+    </div>
+    <!--for jsdemo guide-->
+    <script src="js/codemirror.min.js"></script>
+    <script src="js/ZeroClipboard.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <!-- <script src="jsdemo/map.js?20220708"></script> -->
+    <script src="js/map.js"></script>
+    <!-- <script type="text/javascript" src="jsdemo/demoGuide.js"></script> -->
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+.leftBar {
+  width: 252px;
+  max-height: calc(80vh) !important;
+}
+.leftBar a {
+  text-decoration: none;
+}
+.leftBar .jsWrap_ul {
+  margin: 0;
+}
+.leftBar .jsWrap_ul:first-of-type > li:first-child {
+  padding-top: 10px;
+}
+.leftBar .jsWrap_ul:first-of-type > li:last-child {
+  padding-bottom: 10px;
+}
+.leftBar .jsWrap_div {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  line-height: 40px;
+  padding: 0 24px;
+  box-sizing: border-box;
+  font-family: PingFangSC-Regular;
+  font-size: 14px;
+  color: #141419;
+  letter-spacing: 0;
+  cursor: pointer;
+  position: relative;
+}
+.leftBar .jsWrap_div img {
+  width: 6px;
+  height: 12px;
+}
+.leftBar .jsWrap_div .jsWrap_span {
+  width: 6px;
+  height: 12px;
+  background: url("../img/icon/jsapisideup.png") no-repeat;
+  background-size: 6px 12px;
+  margin-top: 15px;
+}
+.leftBar .twoselect {
+  display: none;
+}
+.leftBar .twoselect > li {
+  color: #333;
+  padding: 0 0 0 38px;
+  line-height: 40px;
+  font-size: 14px;
+}
+.leftBar .twoselect_active {
+  display: block;
+}
+.leftBar .active {
+  color: #F5533D;
+}
+.leftBar .active .jsWrap_span {
+  width: 12px;
+  height: 6px;
+  background: url("../img/icon/jsapisidedown.png") no-repeat;
+  background-size: 12px 6px;
+}
+.leftBar .threeselect > li {
+  margin-left: 16px;
+  font-family: 'PingFangSC-Regular';
+  font-size: 13px;
+  color: #666666 !important;
+  letter-spacing: 0;
+  width: 146px;
+  line-height: 22px;
+  padding: 9px 0;
+}
+.leftBar .threeselect > li a {
+  color: #666666 !important;
+}

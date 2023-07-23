@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>MAP_GIS</title>
+	<link rel="stylesheet" type="text/css" href="mapcat/res/webgl/10/bmap.css"/>
+	<script type="text/javascript" src="mapcat/api.js"></script>
+	
+	 <script type="text/javascript" src="province.js"></script>
+	<script type="text/javascript" src="/jquery.js"></script>
+	<script src="mapcat/modules/LuShu_min.js"></script>
+	
+	 <script src="mapcat/modules/TrackAnimation.min.js"></script>
+	    <style type="text/css">
+		body, html {
+			width: 100%;
+			height: 100%;
+			margin:0;
+			font-family:"微软雅黑";
+		}
+		#container{
+			width:100%;
+			height:100%;
+        }
+	</style>
+</head>
+
+<body>
+		
+	<div id="container" ></div>
+
+
+</body>
+
+<script type="text/javascript">
+
+
+ var map = new BMapGL.Map("container");
+        map.centerAndZoom(new BMapGL.Point(116.404, 39.915), 11);
+
+
+        var p1 = new BMapGL.Point(116.301934,39.977552);
+        var p2 = new BMapGL.Point(116.508328,39.919141);
+
+        var driving = new BMapGL.DrivingRoute(map, {renderOptions:{map: map, autoViewport: true}});
+        driving.search(p1, p2);
+	
+
+</script>
+</html>

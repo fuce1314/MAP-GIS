@@ -27,17 +27,17 @@
 
 </html>
 <script>
-  var map = new BMapGL.Map('container');
-  map.centerAndZoom(new BMapGL.Point(106.447151,29.547786), 18);
-  map.enableScrollWheelZoom(true);
-  var opts = {
-    position: new BMapGL.Point(106.447151,29.547786), // 指定文本标注所在的地理位置
+ var map = new BMapGL.Map('container');
+map.centerAndZoom(new BMapGL.Point(116.280, 40.049), 12);
+map.enableScrollWheelZoom(true);
+var opts = {
+    position: new BMapGL.Point(116.2787, 40.0492), // 指定文本标注所在的地理位置
     offset: new BMapGL.Size(30, -30) // 设置文本偏移量
-  };
-  // 创建文本标注对象
-  var label = new BMapGL.Label('欢迎使用离线地图JSAPI GL版本', opts);
-  // 自定义文本标注样式
-  label.setStyle({
+};
+// 创建文本标注对象
+var label = new BMapGL.Label('欢迎使用百度地图JSAPI GL版本', opts);
+// 自定义文本标注样式
+label.setStyle({
     color: 'blue',
     borderRadius: '5px',
     borderColor: '#ccc',
@@ -46,6 +46,6 @@
     height: '30px',
     lineHeight: '30px',
     fontFamily: '微软雅黑'
-  });
-  map.addOverlay(label);
+});
+map.addOverlay(label);
 </script>
